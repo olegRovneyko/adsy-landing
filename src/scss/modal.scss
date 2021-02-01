@@ -1,6 +1,6 @@
 .modal-bg {
+	display: none;
 	position: fixed;
-	display: flex;
 	justify-content: center;
 	align-items: center;
 	top: 0;
@@ -11,8 +11,10 @@
 	z-index: 100;
 }
 .modal {
-	display: none;
-	position: relative;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
 	padding: 47px 60px 28px;
 	background-color: $bg2-color;
 	box-shadow: 0px 0px 76px 0px rgba(0, 0, 0, 0.12);
@@ -23,11 +25,14 @@
 		right: 20px;
 		width: 20px;
 		height: 20px;
+		padding: 0;
+		border: none;
+		background-color: transparent;
 		cursor: pointer;
 		svg {
 			width: 100%;
 			height: 100%;
-			fill: #ffffff;
+			fill: #fff;
 		}
 	}
 	&__header {
@@ -67,6 +72,9 @@
 			margin-bottom: 15px;
 			line-height: 63px;
 			border-radius: 31.5px;
+			&:focus {
+				outline: none;
+			}
 			&--email {
 				padding-left: 25px;
 				font-size: 20px;
@@ -76,6 +84,8 @@
 				border: 3px solid #272727;
 			}
 			&--submit {
+				padding: 0;
+				border: none;
 				font-size: 24px;
 				font-weight: 800;
 				background-color: #08cbd7;

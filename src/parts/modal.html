@@ -1,10 +1,10 @@
 <div class="modal-bg">
 	<div class="modal">
-		<span class="modal__close" id="modal_close">
+		<button class="modal__close" id="modal_close">
 			<svg>
 				<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./images/sprites.svg#close"></use>
 			</svg>
-		</span>
+		</button>
 		<h3 class="modal__header">Sign Up and Get a FREE Bonus</h3>
 		<div class="modal__body">
 			<p class="modal__description">
@@ -12,8 +12,8 @@
 			</p>
 			<div class="modal__action">
 				<form class="modal-signup">
-					<input type="email" class="modal-signup__item modal-signup__item--email" placeholder="Your Email" required>
-					<button type="submit" class="modal-signup__item modal-signup__item--submit">Sign Up</button>
+					<input type="email" class="modal-signup__item modal-signup__item--email" placeholder="Your Email"  id="modal_email" required>
+					<button type="submit" class="modal-signup__item modal-signup__item--submit" id="modal_signup">Sign Up</button>
 				</form>
 				<div class="modal-google">
 					<p class="modal-google__label">Or Sign up with Google:</p>

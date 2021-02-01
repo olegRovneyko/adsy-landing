@@ -19,8 +19,20 @@ function html() {
     .pipe(dest('dist'))
 }
 
+const jsFiles = [
+  'src/scripts/libs/jquery-3.5.1.min.js',
+  'src/scripts/libs/slick.min.js',
+  'src/scripts/scripts.js'
+];
+
+function scripts() {
+  return src(jsFiles)
+  .pipe(concat('scripts.js'))
+  .pipe(dest('dist'));
+}
+
 function images() {
-	return src('src/images/*.*')
+	return src('src/images/**/*.*')
 	.pipe(dest('dist/images'))
 }
 
@@ -50,9 +62,11 @@ function serv() {
   })
 
   watch('src/**/*.html', series(html)).on('change', sync.reload)
+  watch('src/scripts/**/*.js', series(scripts)).on('change', sync.reload)
   watch('src/scss/**/*.scss', series(scss)).on('change', sync.reload)
+  watch('src/images/**/*.*', series(images)).on('change', sync.reload)
 }
 
-exports.build = series(clear, scss, parallel(images, fonts), html)
-exports.serv = series(clear, scss, parallel(images, fonts), html, serv)
+exports.build = series(clear, scss, scripts, parallel(images, fonts, html))
+exports.serv = series(clear, scss, scripts, parallel(images, fonts, html), serv)
 exports.clear = clear
