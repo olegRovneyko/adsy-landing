@@ -1,0 +1,17 @@
+.two-section {	
+	background-color: #ededed;
+	overflow: hidden;
+	&:before {
+		content: '';
+		position: absolute;
+		bottom: 7%;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 120%;
+		padding-top: 120%;
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 2114.3 2114.3'%3E%3Ccircle fill='%23E9E9E9' cx='1057.2' cy='1057.2' r='1056.7'/%3E%3Ccircle fill='none' stroke='%23DDDDDD' cx='1057.2' cy='1057.2' r='646'/%3E%3Ccircle fill='%23E2E2E2' cx='1057.2' cy='1057.2' r='478.5'/%3E%3C/svg%3E");
+	    background-size: 100% auto;
+	    background-position: center;
+	    background-repeat: no-repeat;
+	}
+}

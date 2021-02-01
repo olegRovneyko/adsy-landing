@@ -8,7 +8,10 @@ body {
 .header-container,
 .footer-container {
 	display: flex;
-	max-width: 1600px;
+	width: 1600px;
+	@media (max-width: 1600px) {
+		max-width: 1110px;
+	}
 	margin: 0 auto;
 }
 .main-container {
@@ -27,4 +30,14 @@ body {
 }
 .col-3 {
 	width: calc(25% - 30px);
+}
+.section {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	padding-top: 32px;
+	padding-bottom: 32px;
 }

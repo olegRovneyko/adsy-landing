@@ -1,0 +1,126 @@
+.modal-bg {
+	position: fixed;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: rgba(52, 52, 52, .51);
+	z-index: 100;
+}
+.modal {
+	display: none;
+	position: relative;
+	padding: 47px 60px 28px;
+	background-color: $bg2-color;
+	box-shadow: 0px 0px 76px 0px rgba(0, 0, 0, 0.12);
+	border-radius: 10px;
+	&__close {
+		position: absolute;
+		top: 20px;
+		right: 20px;
+		width: 20px;
+		height: 20px;
+		cursor: pointer;
+		svg {
+			width: 100%;
+			height: 100%;
+			fill: #ffffff;
+		}
+	}
+	&__header {
+		margin-top: 0;
+		margin-bottom: 43px;
+		font-size: 36px;
+		line-height: 1.2;
+		font-weight: 800;
+		text-align: center;
+		color: #343434;
+	}
+	&__body {
+		display: flex;
+		margin-bottom: 34px;
+	}
+	&__description {
+		width: 250px;
+		margin: 0;
+		padding-top: 12px;
+		padding-right: 54px;
+		border-right: 1px solid #343434;
+		font-size: 30px;
+		line-height: 1.2;
+		font-weight: 300;
+		color: #343434;
+	}
+	&__action {
+		display: flex;
+		flex-direction: column;
+		padding-left: 60px;
+	}
+	&-signup {
+		margin-bottom: auto;
+			&__item {
+			display: block;
+			width: 286px;
+			margin-bottom: 15px;
+			line-height: 63px;
+			border-radius: 31.5px;
+			&--email {
+				padding-left: 25px;
+				font-size: 20px;
+				font-weight: 300;
+				background-color: transparent;
+				color: #ccc;
+				border: 3px solid #272727;
+			}
+			&--submit {
+				font-size: 24px;
+				font-weight: 800;
+				background-color: #08cbd7;
+				transition: background-color .5s;
+				cursor: pointer;
+				&:hover {
+					background-color: #fff;
+				}
+			}
+		}
+	}
+	&-google {
+		display: flex;
+		align-items: center;
+		&__label {
+			width: 100px;
+			margin-top: 0;
+			margin-bottom: 0;
+			margin-right: 10px;
+			font-size: 16px;
+			line-height: 1.2;
+			font-weight: 300;
+			text-align: right;
+			color: #5f5f5f;
+		}
+		&__sign {
+			display: block;
+			width: 38px;
+			height: 38px;
+			svg {
+				width: 100%;
+				height: 100%;
+				fill: #5f5f5f;
+			}
+		}
+	}
+	&__footer {
+		width: 286px;
+		margin: 0;
+		margin-left: 315px;
+		font-size: 14px;
+		line-height: 1.2;
+		font-weight: 300;
+		text-align: center;
+		color: #343434;
+	}
+}
+
