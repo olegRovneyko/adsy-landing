@@ -22,6 +22,7 @@ function html() {
 const jsFiles = [
   'src/scripts/libs/jquery-3.5.1.min.js',
   'src/scripts/libs/slick.min.js',
+  'src/scripts/libs/wow.min.js',
   'src/scripts/scripts.js'
 ];
 

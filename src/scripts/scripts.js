@@ -15,25 +15,34 @@ window.addEventListener('load', function() {
 			$('.modal-bg').fadeOut(200);
 	});
 
-	$('#modal_signup').on('click', function(e) {
+	$('#banner_signup, #modal_signup').on('click', function(e) {
 		e.preventDefault();
 
-		var field = $('#modal_email');
-		var email = $.trim(field.val());
+		var field = $(this).prev('input');
 
-		if (validateEmail(email)) {
-			setTimeout(function() {
-				$('.modal-bg').fadeOut(200);
-			}, 1000);
-		} else {
-			field.css('border-color', '#d06012');
+		if (field.length) {
+			var email = $.trim(field.val());
+
+			if (!validateEmail(email)) {
+				field.css('border-color', '#d06012');
+			} else {
+				setTimeout(function() {
+					if (field.attr('id') == 'modal_email') {
+						$('.modal-bg').fadeOut(200);
+					}
+					field.val('');
+				}, 1000);
+			}
 		}
 	});
-	$('#modal_email').on('focus', function() {
+
+	$('#modal_email, #banner_email').on('focus', function() {
 		$(this).css('border-color', '');
 	});
 
 	$('.slider').slick({
 		dots: true
-	});	
+	});
+
+	new WOW().init();
 });
